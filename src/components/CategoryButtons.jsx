@@ -17,13 +17,13 @@ export default function CategoryButtons({ searchCategory, setSearchCategory }) {
 
   /* Show category search buttons */
   return (
-    <div className="navbar navbar-expand-lg navbar-dark">
+    <div className="navbar navbar-expand-lg navbar-dark justify-content-center">
       {categoryButtons.map(({ label, value }) => (
         <button
           key={value}
           data-category={value}
           onClick={handleCategoryClick}
-          className={`btn btn-sm btn-outline-secondary rounded-pill ${
+          className={`mx-1 btn btn-sm btn-outline-secondary rounded-pill ${
             searchCategory === value && " text-info border-info"
           }`}
         >
