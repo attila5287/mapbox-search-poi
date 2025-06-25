@@ -6,3 +6,20 @@ body,
   height: 100%;
   margin: 0;
 }
+
+
+.popup-title {
+  font-weight: bold;
+}
+
+.popup-address {
+  color: #444;
+}
+
+.marker-emoji {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 15px;
+}

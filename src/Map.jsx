@@ -1,12 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import { SearchBoxCore, SessionToken } from "@mapbox/search-js-core";
-
+import POIMarker from "./components/POIMarker";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./App.css";
 
 
-const DEFAULT_MAP_BOUNDS = [
+<div>
+  const DEFAULT_MAP_BOUNDS = [
+</div>
   [-104.98705, 39.71675],
   [-104.97377, 39.71900],
 ];
@@ -106,6 +108,15 @@ function Map({ MAPBOX_ACCESS_TOKEN }) {
 
       {/* Map container */}
       <div id="map-container" ref={mapContainerRef} />
+      {searchResults.length > 0 &&
+        searchResults.map((feature) => (
+          <POIMarker
+            key={feature.properties.mapbox_id}
+            map={mapRef.current}
+            feature={feature}
+            category={searchCategory}
+          />
+        ))}
     </>
   );
 }
